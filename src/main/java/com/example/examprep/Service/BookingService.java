@@ -56,7 +56,7 @@ public class BookingService {
     @Transactional
     public void updateBooking(int id, Booking project) {
         Booking storedProject = bookingRepository.findById(id).orElseThrow(
-                () -> new IllegalStateException("Project with ID " + id + " does not exist."));
+                () -> new IllegalStateException("Booking with ID " + id + " does not exist."));
         if (project.getDate() != null) {
             storedProject.setDate(project.getDate());
         }
